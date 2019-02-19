@@ -1,0 +1,4 @@
+# Ignore credentials and hopefully nothing else
+*.env
+token.json
+credentials.json
