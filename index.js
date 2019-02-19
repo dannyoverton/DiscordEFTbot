@@ -90,7 +90,3 @@ function listMajors(auth) {
       
     });
   }
-
-exports.authorize = authorize;
-exports.getNewToken = getNewToken;
-exports.listMajors = listMajors;

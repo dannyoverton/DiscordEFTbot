@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const ListMajors = require('./index');
+
 
 
 // dotenv env variables
@@ -174,7 +174,7 @@ function getNewToken(oAuth2Client, callback) {
     });
   });
 }
-
+ammoChart = [];
 function listMajors(auth) {
     const sheets = google.sheets({version: 'v4', auth});
     sheets.spreadsheets.values.get({
@@ -187,8 +187,8 @@ function listMajors(auth) {
         console.log('----');
         // Print columns A and E, which correspond to indices 0 and 4.
         rows.map((row) => {
-            ammoChart = (`${row[0]}, ${row[1]}, ${row[2]}, ${row[3]}, ${row[4]}, ${row[5]}, ${row[6]}, ${row[7]}, ${row[8]}, ${row[9]}, ${row[10]}, ${row[11]}, ${row[12]}, ${row[13]}`);
-            console.log(ammoChart)
+            var getRows = (`${row[0]}, ${row[1]}, ${row[2]}, ${row[3]}, ${row[4]}, ${row[5]}, ${row[6]}, ${row[7]}, ${row[8]}, ${row[9]}, ${row[10]}, ${row[11]}, ${row[12]}, ${row[13]},`);
+            ammoChart.push(getRows);
             
         });
       } else {
